@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h1 class="mb-3">Reporte cuasi</h1>
+<form action="/form" onsubmit="return validateForm()" method="post">
+<input autocomplete="off" autofocus name="name" placeholder="Nombre denunciante" type="text">
+<p></p>
+<p></p>
+<div class="form-group">
+<label for="detallecuasi"> Favor indicar situacion de peligro detectada</label>
+<form action="/form" onsubmit="return validateForm()" method="post">
+<textarea class="form-control" id="detalle cuasi" rows="3" name="evaluation"></textarea>
+</div>
+<p></p>
+<p> </p>
+<p> </p>
+<p>Indicar sitio, potencial y tipo de accion recomentada</p>
+<form action="/form" onsubmit="return validateForm()" method="post">
+<select name="situacion">
+<p>Situación detectada</p>
+<option value="PLANTA">PLANTA</option>
+<option value="RUTA">RUTA</option>
+<option value="OBRA">OBRA</option>
+</select>
+<form action="/form" onsubmit="return validateForm()" method="post">
+<select name="potencial">
+<p>Situación detectada</p>
+<option value="GRAVE">GRAVE</option>
+<option value="MEDIO">MEDIO</option>
+<option value="LEVE">LEVE</option>
+</select>
+<form action="/form" onsubmit="return validateForm()" method="post">
+<select name="accion">
+<p>Situación detectada</p>
+<option value="INSTRUIR">INSTRUIR</option>
+<option value="REPARAR">REPARAR</option>
+<option value="IMPLEMENTAR">IMPLEMENTAR</option>
+<option value="PROCEDIMENTAR">PROCEDIMENTAR</option>
+<option value="ORDENAR">ORDENAR</option>
+<option value="DETENER">DETENER</option>
+</select>
+<p> </p>
+<p> </p>
+<input autocomplete="off" autofocus name="title" placeholder="Nombre responsable" type="text">
+<p></p>
+<p></p>
+<p></p>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Esta seguro que desea reportar esta condición
+      </label>
+      <div class="invalid-feedback">
+        Debe estar de acuerdo antes de enviar.
+      </div>
+    </div>
+  </div>
+<button class="btn btn-primary" type="submit">Enviar</button>
+
+    </form>
+
+    <script>
+
+        /*  */
+
+        function validateForm() {
+        var x = document.forms["myForm"]["name"].value;
+        if (x == "") {
+        alert("Name must be filled out");
+        return false;
+        }
+}
+
+    </script>
+
+{% endblock %}
